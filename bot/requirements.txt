@@ -1,0 +1,5 @@
+python-telegram-bot
+openai
+pinecone-client
+python-dotenv
+langchain
