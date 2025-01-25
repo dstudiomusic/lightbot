@@ -1,0 +1,26 @@
+# Порт SSH
+Port 22
+
+# Разрешаем вход по ключам
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Разрешаем вход по паролю (можно отключить после тестов)
+PasswordAuthentication yes
+
+# Разрешаем root-доступ
+PermitRootLogin yes
+
+# Настройки безопасности
+KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+Ciphers aes256-gcm@openssh.com,aes128-gcm@openssh.com,chacha20-poly1305@openssh.com
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
+
+# Логирование
+LogLevel VERBOSE
+
+# Запрещаем пустые пароли
+PermitEmptyPasswords no
+
+# Запрещаем root-доступ без пароля
+PermitRootLogin prohibit-password
